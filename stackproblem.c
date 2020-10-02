@@ -1,14 +1,10 @@
 // stackproblem.c –Lab 02 – Matt, Rieckenberg
 #include <stdio.h>
-#include <string.h>
 
 #define	MAX_SIZE	80
 
 // These defines are meant to be constant - do not change
 #define	EMPTY_INDEX	-1
-#define	MAX_INDEX	(STACK_SIZE - 1)
-
-
 #define	RTN_ERROR	0
 #define	RTN_OK		1
 
@@ -25,16 +21,11 @@ int push ()
     while (1){
         scanf("%c",&ch);
         stack[++top] = ch;
-
+        if (top>=80) break;
         if (ch == '\n') break;
-        /*
-
-        else if(strlen(ch) >= 80) break;
-        else continue;
-         */
     }
     return  RTN_OK;
-}//push()
+}
 
 void printStack(){
     int i;
@@ -57,5 +48,4 @@ int main (void)
     printStack();
     reverseStack();
     return 0;
-}//main()
-
+}
